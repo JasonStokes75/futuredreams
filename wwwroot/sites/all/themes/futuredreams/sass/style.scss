@@ -1,0 +1,38 @@
+@import "compass";
+@import "vars";
+
+body {
+	@include background-image(linear-gradient(to bottom, $top-grad-color $grad-start, $bottom-grad-color $grad-end));
+
+}
+
+h2 {
+	color: $headline-color;
+	@include text-shadow(2px 2px 5px #000);
+}
+.admin-menu {
+	color: $menu-text-color;
+	background-color: $menu-back-color;
+}
+.pane-content {
+    @include border-radius(20px);
+    border: 1px solid $border-color;
+    padding: 10px;
+    // width: 500px;
+    // height: 125px;
+    background-color: $background-color;
+    color: #000000;
+}
+.footer {
+	background-color: $footer-back-color;
+	h3 {
+		color: $footer-text-color
+	}
+}
+
+.no-bg .pane-content {
+	background-color: transparent;
+	@include border-radius(0px);
+	border: 0px;
+	padding: 0px;
+}

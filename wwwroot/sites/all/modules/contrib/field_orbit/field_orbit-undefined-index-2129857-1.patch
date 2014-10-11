@@ -1,0 +1,21 @@
+diff --git a/templates/field-orbit.tpl.php b/templates/field-orbit.tpl.php
+index 8ccf3c8..36fabb8 100644
+--- a/templates/field-orbit.tpl.php
++++ b/templates/field-orbit.tpl.php
+@@ -9,14 +9,14 @@
+   <ul class="<?php print $classes; ?>" data-orbit data-options="<?php print $data_options; ?>">
+     <?php foreach ($items as $key => $item) : ?>
+       <li data-orbit-slide="slide-<?php print $key; ?>"><?php print $item['media']; ?>
+-        <?php if (isset($item['caption']) && $item['caption'] != '') : ?>
++        <?php if (!empty($item['caption'])) : ?>
+           <div class="orbit-caption"><?php print $item['caption']; ?></div>
+         <?php endif; ?>
+       </li>
+     <?php endforeach; ?>
+   </ul>
+ 
+-  <?php if ($options['orbit_bullets']) : ?>
++  <?php if (!empty($options['orbit_bullets'])) : ?>
+     <div class="orbit-bullet-container">
+       <ul class="orbit-bullet-thumbs">
+         <?php foreach ($items as $key => $item) : ?>
